@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es"
+      data-assets-path="/"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8" />
+    <title>Juego Patito de Hule</title>
+    <meta name="description" content="Juego del patito de hule" />
+    <link rel="icon" type="image/x-icon" th:href="@{/img/patito_hule.png}">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/vendor/fonts/fontawesome.css}" />
+    <link rel="stylesheet" th:href="@{/vendor/fonts/flag-icons.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/estilos-patito.css}">
+</head>
+
+<body>
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+            <div class="layout-page">
+                <div class="content-wrapper">
+                    <div class="container-xxl flex-grow-1 container-p-y">
+                        <div class="contenedor-del-rio">
+                            
+                            <!-- Título -->
+                            <h1 class="titulo">Juego del patito de hule Gotín🦆</h1>
+                            
+                            <!-- Info -->
+                            <div class="info justify-content-center">
+                                <div class="info-item justify-content-center">
+                                    <div class="info-piensos-rec" id="recolectados">0</div>
+                                    <div>Piensos Recolectados</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Reglas -->
+                            <div class="instrucciones">
+                                <h5> Instrucciones del Juego</h5>
+                                <p>1. Gener 10 piensos</p>
+                                <p>2. Arrástralos al río excepto las dos primeras filas</p>
+                                <p>3. Dale al botón de colocar a gotin para seleccionar donde inicia</p>
+                                <p>4. La flecha cambia de dirección cada segundo</p>
+                                <p>5. Clickea el patito cuando la flecha esté en la posición que quieras moverlo</p>
+                                <p>6. Ganas si recolectas 5 patitos</p>
+                            </div>
+                            
+                            <!-- Mapa del juego -->
+                            <div class="rio-tablero" id="tablero">
+                                <!-- Se genera con script-->
+                            </div>
+                            
+                            <div class="footer-piensos">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <button class="botones-juego primary" id="btnGenerarPiensos">Generar Piensos</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="text-center">
+                                            <button class="botones-juego" id="btnIniciarPatito" style="display: none;">Colocar a Gotín🦆</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Inventario de piensos -->
+                                <div class="piensos-almac" id="piensosLista">
+                                </div>
+
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script th:src="@{/js/patito.js}"></script>
+    <script th:src="@{/vendor/libs/popper/popper.js}"></script>
+    <script th:src="@{/vendor/js/bootstrap.js}"></script>
+    <script th:src="@{/js/main.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
